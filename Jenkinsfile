@@ -18,7 +18,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'dockerpassword', variable: 'dockerpassvar')]) {
         script {
-                bat "docker login -u kalharacodes --password-stdin %dockerpassvar%"
+                bat "docker login -u kalharacodes -p %dockerpassvar%"
             }
             }        
             }
